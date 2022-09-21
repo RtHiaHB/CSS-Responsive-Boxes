@@ -1,3 +1,52 @@
 body {
   background: blanchedalmond;
 }
+
+* {
+  border:1px solid darkblue;
+}
+/*
+The whole container
+*/
+.container {
+  display:flex;
+  min-height:100vh;
+  flex-direction:column;
+  justify-content: space-between;
+}
+/*
+Header and footer
+*/
+.a, .c {
+  flex-grow:1;
+}
+
+/*
+Page main content
+*/
+
+.b {
+  flex-grow:3;
+}
+
+/*
+Exception for large monitors
+*/
+@media (min-width:600px) {
+  .container {
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+  /*
+  Header should span across the page
+  */
+  .a {
+    width:100%;
+  }
+  /*
+  Everything should have some space around it
+  */
+  .a, .b, .c {
+    margin:1em;
+  }
+}
